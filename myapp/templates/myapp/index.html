@@ -1,0 +1,13 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Books</title>
+</head>
+
+<h1>
+    {%for book in book_list%}
+        {{book.name}} -- {{book.desc}} -- {{book.price}}<br/>
+    {% endfor %}
+</h1>
+</body>
+</html>

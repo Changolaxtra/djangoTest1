@@ -1,10 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Book
 # Create your views here.
 
 
 def index(request):
-    return HttpResponse('<h1>Hello World</h1>')
+    book_list = Book.objects.all()
+    context = {
+        'book_list': book_list
+    }
+    return render(request, 'myapp/index.html', context)
 
 
 def products(request):
